@@ -1,0 +1,45 @@
+//
+//  PrefixHeader.pch
+//  KJCamera
+//
+//  Created by Kegem Huang on 2017/3/17.
+//  Copyright © 2017年 huangkejin. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "AppDelegate.h"
+#import <UIKit/UIKit.h>
+#import "Utility.h"
+
+// 日志输出
+#ifdef DEBUG
+#define Plog(...) NSLog(__VA_ARGS__)
+#else
+#define Plog(...)
+#endif
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+#define KAppDelegate ((AppDelegate*)[UIApplication sharedApplication].delegate)
+
+//状态条的高
+#define StatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+//得到屏幕bounds
+#define SCREEN_SIZE [UIScreen mainScreen].bounds
+//得到屏幕height
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+//得到屏幕width
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+
+
+#define DUButtonColor [UIColor colorWithRed:87.0 / 255.0 green:169.0 / 255.0 blue:221.0 / 255.0 alpha:1]
+#define DUButtonDarkenColor [UIColor colorWithRed:21.0 / 255.0 green:125.0 / 255.0 blue:192.0 / 255.0 alpha:1]
+#define DULabelDarkenColor [UIColor colorWithRed:96.0 / 255.0 green:96.0 / 255.0 blue:96.0 / 255.0 alpha:1]
+#define DUButtonTitleFont [UIFont fontWithName:@"PingFangSC-Light" size:18]
+
+#define DUMainCardTableViewCellId @"DUMainCardTableViewCell"
+
+#endif /* PrefixHeader_pch */
